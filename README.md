@@ -6,6 +6,7 @@ Projeto Final de **Design de Software** — Insper, 2026.2.
 
 - Antônio Dias
 - Marcos Rodrigues
+- João Victor Peixoto
 
 ## Descrição
 Jogo de pesca em 2D feito com Python e Pygame. Um velho de chapéu pesca na margem: aperte a tecla na hora certa para fisgar o peixe. Quanto melhor o timing e a vara, mais raro o peixe. Os peixes vão para o armazém, podem ser vendidos, e o dinheiro compra varas melhores e energéticos. São 4 lugares de pesca, um deles secreto.
