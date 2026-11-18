@@ -62,3 +62,63 @@ def tocar_resultado(resultado, assets, progresso):
     elif resultado == 'errou':
         tocar(assets, progresso, 'errou')
 
+        
+def resumo(jogador):
+    """Quantos peixes, valor total e quantos de cada raridade."""
+    contagem = {}
+    for raridade in RARIDADES:
+        contagem[raridade] = 0
+    valor = 0
+    for nome in jogador.peixes:
+        contagem[PEIXES[nome]['raridade']] += 1
+        valor += PEIXES[nome]['preco']
+    return len(jogador.peixes), valor, contagem
+
+
+
+
+def tela_resultado(window, assets, j1, j2):
+    """Tela final: mostra quem ganhou. ENTER: revanche, ESC: menu."""
+    clock = pygame.time.Clock()
+    qtd1, valor1, contagem1 = resumo(j1)
+    qtd2, valor2, contagem2 = resumo(j2)
+    if qtd1 > qtd2 or (qtd1 == qtd2 and valor1 > valor2):
+        titulo = 'J1 venceu!'
+    elif qtd2 > qtd1 or (qtd1 == qtd2 and valor2 > valor1):
+        titulo = 'J2 venceu!'
+    else:
+        titulo = 'Empate!'
+    while True:
+        clock.tick(FPS)
+        for evento in pygame.event.get():
+            if evento.type == pygame.QUIT:
+                return SAIR
+            if evento.type == pygame.KEYDOWN:
+                if evento.key == pygame.K_RETURN:
+                    return MULTI
+                if evento.key == pygame.K_ESCAPE:
+                    return MENU
+
+
+        window.blit(assets['fundos']['lago'], (0, 0))
+        escrever(window, assets['fonte_titulo'], titulo, AMARELO, WIDTH // 2, 75)
+        desenhar_placar(window, assets, 'J1', qtd1, valor1, contagem1, 100)
+        desenhar_placar(window, assets, 'J2', qtd2, valor2, contagem2, WIDTH // 2 + 20)
+        escrever(window, assets['fonte_pequena'], 'ENTER: revanche    ESC: menu', BRANCO, WIDTH // 2, HEIGHT - 25)
+        pygame.display.update()
+
+
+
+
+def desenhar_placar(window, assets, nome, quantidade, valor, contagem, x):
+    """Painel de um jogador: total, valor e peixes por raridade."""
+    largura = WIDTH // 2 - 120
+    painel(window, x, 140, largura, 350)
+    centro = x + largura // 2
+    escrever(window, assets['fonte_grande'], nome, AMARELO, centro, 175)
+    escrever(window, assets['fonte'], f'Peixes: {quantidade}   ·   $ {valor}', BRANCO, centro, 222)
+    for i in range(len(RARIDADES)):
+        raridade = RARIDADES[i]
+        texto = f'{NOME_RARIDADE[raridade]}: {contagem[raridade]}'
+        escrever(window, assets['fonte'], texto, COR_RARIDADE[raridade], centro, 270 + i * 42)
+
