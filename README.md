@@ -1,20 +1,14 @@
 # Pyfish
-
 Projeto Final de **Design de Software** — Insper, 2026.2.
-
 ## Integrantes
-
 - Antônio Dias
 - Marcos Rodrigues
 - João Victor Peixoto
-
 ## Descrição
-Jogo de pesca em 2D feito com Python e Pygame. Um velho de chapéu pesca na margem: aperte a tecla na hora certa para fisgar o peixe. Quanto melhor o timing e a vara, mais raro o peixe. Os peixes vão para o armazém, podem ser vendidos, e o dinheiro compra varas melhores e energéticos. São 4 lugares de pesca, um deles secreto.
+Jogo de pesca em 2D feito com Python e Pygame. Um velho pesca na margem: aperte a tecla na hora certa para fisgar o peixe. Quanto melhor o timing e a vara, mais raro o peixe. Os peixes vão para o armazém, podem ser vendidos, e o dinheiro compra varas melhores e energéticos. São 4 lugares de pesca, um deles secreto.
 No **multiplayer**, duas pessoas no mesmo teclado têm 1 minuto para pescar o máximo de peixes.
 ## Vídeo
-
 *(link do vídeo do jogo funcionando)*
-
 ## Como instalar e jogar
 Precisa de Python 3.10 ou mais novo.
 ```bash
@@ -73,7 +67,6 @@ O arquivo a executar é o **`main.py`**. Usamos o **pygame-ce** (é o mesmo `imp
 | `docs/` | explicação dos códigos |
 
 ## Regras que seguimos ao escrever o código
-
 1. **Um arquivo para cada parte do jogo.** É a divisão do handout de PyGame da disciplina (`config.py`, `assets.py`, `sprites.py` e uma tela de jogo).
 2. **Todos os números do jogo no `config.py`.** Preços, chances, tempos, cores e lugares ficam num só lugar.
 3. **Regras separadas do desenho.** `pesca.py` só sorteia e julga o timing; quem desenha são as telas e o `Pescador`.
@@ -85,22 +78,12 @@ O arquivo a executar é o **`main.py`**. Usamos o **pygame-ce** (é o mesmo `imp
 11. **Salvar a cada mudança.** O progresso é gravado a cada peixe, venda ou compra, então nada se perde se o jogo fechar.
 
 ## Referências
-
 | O quê | Onde | Fonte |
 |---|---|---|
 | Estrutura do jogo (loop, estados, assets, arquivos) | todo o projeto | handout de PyGame de Design de Software |
 | Documentação do pygame-ce | uso geral | https://pyga.me/docs/ |
-
 ## Uso de IA generativa
-
-| Arquivo / trecho | Ferramenta | Quanto foi gerado | Como foi usado |
-|---|---|---|---|
-| Todos os arquivos `.py` (menu, pesca, lugares, energético, armazém, loja, mapa, multiplayer, configurações) | Claude Code (Anthropic) | 100% | escrito a partir da descrição do grupo; revisado e testado pelo grupo |
-| `assets/sons/*.wav` | script feito com Claude Code | 100% | efeitos sonoros simples, sem direitos de terceiros |
-| `docs/explicacao_dos_codigos.html` | Claude Code | 100% | explicação de cada bloco do código e perguntas para estudar |
-
-**Parágrafo de uso:** usamos o Claude Code para escrever o jogo a partir das ideias do grupo (telas, pesca com timing, raridades, lugares, energético, armazém, loja e multiplayer), pedindo que usasse os conceitos dos handouts da disciplina e explicasse o que fugisse deles. Também geramos com ele a página que explica cada bloco do código, que usamos para estudar. Todos os integrantes revisaram o código.
+| Todos os arquivos `.py` (menu, pesca, lugares, energético, armazém, loja, mapa, multiplayer, configurações) foram guiados com a ajuda do video do pygame (https://www.youtube.com/watch?v=AY9MnQ4x3zk), https://insper.github.io/DesignDeSoftware/ seguindo o site da diciplina e com o guia de AIg(claude code), sendo principalmente utilizado pelo aluno Antônio, que gerou um jogo protipo para o grupo usar de molde e desenvolver o pyfish.
 
 ### Anexo — interações com a IAg
-
-- *(link ou arquivo com o histórico exportado das conversas de 06/11 e 07/11/2026)*
+- Link Antônio : C:\Users\Antônio Dias\Downloads\session-export-1795214658490.zip 
