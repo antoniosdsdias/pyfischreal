@@ -2,7 +2,7 @@
 import pygame
 
 from assets import tocar
-from config import (AMARELO, BRANCO, COR_RARIDADE, FPS, HEIGHT, MENU, MULTI, NOME_RARIDADE,
+from config import (AMARELO, BRANCO, CHAO_Y, COR_RARIDADE, FPS, HEIGHT, MENU, MULTI, NOME_RARIDADE,
                     PEIXES, RARIDADES, SAIR, TEMPO_MULTI, WIDTH)
 from desenhos import escrever, painel
 from pescador import Pescador
@@ -43,6 +43,7 @@ def tela_multi(window, assets, progresso):
 
         # gera saídas
         window.blit(assets['fundos']['lago'], (0, 0))
+        window.blit(assets['pier'], (j2.rect.x - 5, CHAO_Y - 3))   # píer embaixo do J2, para ele não flutuar
         j1.desenhar(window, assets, agora)
         j2.desenhar(window, assets, agora)
         escrever(window, assets['fonte'], f'J1 - peixes: {len(j1.peixes)}', AMARELO, 120, 30)
