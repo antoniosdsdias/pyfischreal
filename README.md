@@ -8,7 +8,7 @@ Projeto Final de **Design de Software** — Insper, 2026.2.
 Jogo de pesca em 2D feito com Python e Pygame. Um velho pesca na margem: aperte a tecla na hora certa para fisgar o peixe. Quanto melhor o timing e a vara, mais raro o peixe. Os peixes vão para o armazém, podem ser vendidos, e o dinheiro compra varas melhores e energéticos. São 4 lugares de pesca, um deles secreto.
 No **multiplayer**, duas pessoas no mesmo teclado têm 1 minuto para pescar o máximo de peixes.
 ## Vídeo
-*(link do vídeo do jogo funcionando)*
+https://youtu.be/yQ51xzaZ6z4
 ## Como instalar e jogar
 Precisa de Python 3.10 ou mais novo.
 ```bash
