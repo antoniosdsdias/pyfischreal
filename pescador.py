@@ -62,7 +62,7 @@ class Pescador(pygame.sprite.Sprite):
         self.image = self.parado[0]
         self.rect = self.image.get_rect()
         self.rect.x = x
-        self.rect.bottom = CHAO_Y                  # pé no píer
+        self.rect.bottom = CHAO_Y  + 13                # pé no píer
         self.boia_x = x + 250                      # onde a boia fica (mensagens em cima dela)
         self.nome = nome                           # 'J1', 'J2' ou '' no singleplayer
         self.vara = 'comum'
